@@ -1,0 +1,32 @@
+﻿@model Aula1901.ViewModels.EquipaMembros
+
+@foreach (var item in Model.Equipas)
+{
+    @item.NomeEquipa @: ->
+
+    foreach (var subitem in Model.Membros)
+    {
+        if (item.Id == subitem.EquipaId)
+        {
+            @subitem.NomeMembro @: &nbsp;
+        }
+    }
+
+    <br />
+
+}
+
+<h1> -- </h1>
+
+
+
+
+
+
+
+
+
+
+
+
+

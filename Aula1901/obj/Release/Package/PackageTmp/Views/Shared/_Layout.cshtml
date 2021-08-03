@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    @*<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    *@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--Deve-se alterar o RouteConfig na pasta App_start para iniciar o programa no index desejado-->
+                @Html.ActionLink("Equipas", "Index", "Equipas1", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Membros", "Index", "Membroes", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <!--Serve para adicionar um item ao menu (a barra preta no topo), o 'title' é a caixa de dicas -->
+                    <!-- 1- o que aparece ao utilizador, 2-o método da view, 3-o nome do controlador -->
+                    <li> @Html.ActionLink("[A3]", "Index", "lixo", new { area = "" }, new { @class = "navbar-brand", @title = "Drop com 4 clubes / List<string>" })  </li>
+                    <li>@Html.ActionLink(" [A] ", "Index", "A", new { area = "" }, new { @class = "navbar-brand", @title = "Drop com 4 clubes / List<string>" })</li>
+                    <li>@Html.ActionLink(" [B] ", "Index", "B", new { area = "" }, new { @class = "navbar-brand", @style = "color:orange;", @title = "Foreach / List<Equipa>" })</li>
+                    <li>@Html.ActionLink(" [C] ", "Index", "C", new { area = "" }, new { @class = "navbar-brand", @style = "color:salmon;", @title = "Drops para tabelas" })</li>
+                    <li>@Html.ActionLink(" [D] ", "Index", "D", new { area = "" }, new { @class = "navbar-brand", @style = "color:purple;", @title = "Visualizar a PK a partir da seleção na drop" })</li>
+                    <li>@Html.ActionLink(" [E] ", "Index", "E", new { area = "" }, new { @class = "navbar-brand", @style = "color:blue;", @title = "1: ModelView simples" })</li>
+                    <li>@Html.ActionLink(" [F] ", "Index", "F", new { area = "" }, new { @class = "navbar-brand", @style = "color:olive;", @title = "2: ModelView com select" })</li>
+                    <li>@Html.ActionLink(" [G] ", "Index", "G", new { area = "" }, new { @class = "navbar-brand", @title = "3: ModelView com cores" })</li>
+                    <li>@Html.ActionLink(" [H] ", "Index", "H", new { area = "" }, new { @class = "navbar-brand", @title = "4: ModelView com 'estatísticas'" })</li>
+                    <li>@Html.ActionLink(" [J] ", "Index", "J", new { area = "" }, new { @class = "navbar-brand", @title = "Drop para escolher membros por equipa" })</li>
+
+                    <li>@Html.ActionLink(" [I] ", "Index", "I", new { area = "" }, new { @class = "navbar-brand", @title = "10 consultas com LINQ" })</li>
+                    <li>@Html.ActionLink(" [L] ", "Index", "L", new { area = "" }, new { @class = "navbar-brand", @title = "Consultas com LINQ" })</li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">OUTROS<b class="caret"></b></a>
+
+                        <ul class="dropdown-menu">
+                            <li> @Html.ActionLink("S1-filtrar membros", "Index", "S1", new { area = "" }, new { @class = "" })</li>
+                            <li> @Html.ActionLink("S2-ordena membros pelo nome, A->Z", "Index", "S2", new { area = "" }, new { @class = "" })</li>
+                            <li> @Html.ActionLink("S3-ordena membros pelo nome ou pela equipa, A->Z", "Index", "S3", new { area = "" }, new { @class = "" })</li>
+                            <li> @Html.ActionLink("S4-ordena pelo nome (ascendente e descendente)", "Index", "S4", new { area = "" }, new { @class = "" })</li>
+
+                        </ul>
+                    </li>
+
+                    <li> @Html.ActionLink("[RR]", "Index", "RRa", new { area = "" }, new { @class = "navbar-brand", @title = "Reseta a base de dados e insere os registos padrões" })  </li>
+
+
+
+
+                    @*[RR], Index e não RR, "RR"*@
+                    @*<li>@Html.ActionLink(" [RR] ", "Index", "RR", new { area = "" }, new { @class = "navbar-brand", @title = "Recolonizar as 2 entidadescom os dados originais" })</li>*@
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>*@
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    @*
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>*@
+</body>
+        </html>

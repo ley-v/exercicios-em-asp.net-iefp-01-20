@@ -1,0 +1,21 @@
+﻿
+@using (Html.BeginForm())
+{
+
+@Html.DropDownList("codigoClicado", (SelectList)ViewBag.SEL1)
+
+<input type="submit" name="name" value="CLICAR" />
+
+}
+
+<br />
+<br />
+
+@ViewBag.CODIGOCLICADO
+
+
+
+
+
+
+

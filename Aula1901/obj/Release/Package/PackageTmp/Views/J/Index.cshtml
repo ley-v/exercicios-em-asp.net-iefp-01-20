@@ -1,0 +1,52 @@
+﻿
+
+@model IEnumerable<Aula1901.Models.Membro>
+
+<p>@Html.ActionLink("Create N", "create")</p>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>
+                @Html.DropDownList("idD", (SelectList)ViewBag.LISTA, htmlAttributes: new { @class = "form-control" })
+            </td>
+
+            <td>
+                <input id="btn1" type="submit" class="form-control" name="name" value="ATUALIZAR PÁGINA" />
+            </td>
+        </tr>
+
+    </table>
+}
+
+<table class="table">
+    <tr>
+        @*TH deixa o cabeçalho negrito*@
+        <th>
+            @Html.DisplayNameFor(model => model.Equipa.NomeEquipa)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.NomeMembro)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        @* As TRs devem estar dentro do ciclo foreach pq não sabemos quantos membros irá retornar. Assim, as listas serão criadas conforme o número de 
+            elementos contidos na tabela *@
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Equipa.NomeEquipa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeMembro)
+            </td>
+
+        </tr>
+    }
+</table>
+
+
+

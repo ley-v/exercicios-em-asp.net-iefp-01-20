@@ -1,0 +1,21 @@
+﻿<!---->
+<!--A ideia aqui é receber os dados da tabela e repassar para a visualização no browser-->
+
+@using Aula1901.Models;
+<!-- IEnumerable é possível fazer iteração mas não fazer alteração nos conteúdos
+    -->
+@model IEnumerable<Equipa>
+
+<!--O 'Model' do foreach é uma referencia ao '(Arroba)model'. Pq ele começa com letra maiúscula é um mistério-->
+@foreach (var item in Model)
+{
+    @item.NomeEquipa
+    <br />
+}
+
+
+
+
+
+
+

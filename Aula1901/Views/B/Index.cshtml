@@ -1,0 +1,20 @@
+﻿
+@using Aula1901.Models;
+
+<h4> Lista as equipes existentes </h4>
+@foreach (var item in (List<Equipa>)ViewBag.EQUIPAS)
+{
+    @item.NomeEquipa @: <br/>
+}
+
+<br />
+<br />
+
+<h4> Lista os membros existentes </h4>
+@foreach (var item in (List<Membro>)ViewBag.MEMBROS)
+{
+    <!-- Non Break SPace o '&nbsp' dá espaço sem pular a linha como no caso do '<br>'-->
+    @item.NomeMembro @:&nbsp;
+}
+
+

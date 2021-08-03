@@ -1,0 +1,67 @@
+﻿<!--quando clicamos no hiperlink o controlador que chama a view, e não o contrário
+    -->
+@using Aula1901.Models;
+
+<br />
+listar todas as equipas--------------------------A
+<br />
+@foreach (var item in (List<Equipa>)ViewBag.A)
+{
+    @item.NomeEquipa @:&nbsp; <br />
+}
+<br />
+quantas equipas?--------------------------B
+<br />
+@ViewBag.B
+<br />
+<br />
+equipas ordenadas--------------------------C
+<br />
+@foreach (var item in (List<Equipa>)ViewBag.C)
+{
+    @item.NomeEquipa @:&nbsp; <br />
+}
+<br />
+equipas ordenadas, ordem descendente--------------------------D
+<br />
+@foreach (var item in (List<Equipa>)ViewBag.D)
+{
+    @item.NomeEquipa @:<br />
+}
+<br />
+qual é a equipa número 3?--------------------------E
+<br />
+@ViewBag.E
+<br />
+<br />
+qual é a equipa número 88?--------------------------F
+<br />
+@ViewBag.F
+<br />
+<br />
+qual a primeira equipa?--------------------------G
+<br />
+@ViewBag.G
+<br />
+<br />
+existe a equipa "Arsenal da Devesa"?--------------------------H
+<br />
+@ViewBag.H
+<br />
+<br />
+quantos membros tem a equipa 4?--------------------------I
+<br />
+@ViewBag.I
+<br />
+<br />
+quantos membros tem a equipa "Leões da Tecla"?--------------------------J
+<br />
+@ViewBag.J
+<br />
+<br />
+quantos membros tem a equipa "Arcenal da Debeza"?(não existe; resolver o erro)--------------------------K
+<br />
+
+
+
+

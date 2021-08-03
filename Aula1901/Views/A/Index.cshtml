@@ -1,0 +1,8 @@
+﻿@foreach (var item in (List<string>)ViewBag.LISTA1)
+{
+    @item
+    <br />
+}
+
+@Html.DropDownList("drop1", (SelectList)ViewBag.SEL, "escolha uma opção")
+<!--Html.DropDownList("drop2", (SelectList)ViewBag.L)-->

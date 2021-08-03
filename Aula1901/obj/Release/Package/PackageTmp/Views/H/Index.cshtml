@@ -1,0 +1,80 @@
+﻿
+
+
+
+
+
+
+
+@*            //FAZERRRRRRRRRRRRRRRRRRRRR ###################################################################################*@
+
+
+
+
+
+
+
+
+
+@model Aula1901.ViewModels.EquipaMembros
+
+<h4>Permitir selecionar a equipa, listando os membros dessa equipa</h4>
+<h4>
+    Difere do anterior pq adiciona a cor verde na seleção, a linha vermelha de
+    separação e lista os membros dentro de uma table
+</h4>
+
+<table class="table">
+    <tr>
+        <th>
+            <label>EQUIPas</label>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Equipas)
+    {
+        @* ao selecionar aparece a cor verde. A string selectRow é usada para pintar
+            a <tr> recorrendo ao bootstrap*@
+
+        string selectedRow = "";
+        if (item.Id == ViewBag.equipaClicada) { selectedRow = "success"; }
+        <tr class="@selectedRow">
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeEquipa)
+            </td>
+            <td>
+                @Html.ActionLink("Select", "Index", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+
+@* para colocar a linha vermelha na View*@
+<hr style="border-color: red; border-width: 5px;" />
+
+@* 2- a segunda diferença é a colocação dos membros da equipa selecionada dentro
+    de uma nova tabela, apenas para melhorar o visual*@
+
+@*###################################### fora de quadro##########################*@
+
+<table>
+    <tr>
+        <th> <label> Nº de membros </label></th>
+        <th> <label> nome </label></th>
+        <th> <label> Nº de equipa </label></th>
+
+    </tr>
+</table>
+
+
+@foreach (var item in Model.Membros)
+{
+    if (item.EquipaId == ViewBag.equipaClicada)
+    {
+        @item.Id @: -
+        @item.NomeMembro @: -
+        @item.EquipaId @: -
+        <br />
+    }
+}
